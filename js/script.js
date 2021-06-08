@@ -32,10 +32,22 @@ console.log(secondoArray);
 
 
 //-------FUNCTIONS------//
+/**
+ * Funzione che genera un numero casuale tra un numero min e max
+ * @param  min parametro minimo
+ * @param  max parametro massimo
+ * @returns  numero casuale tra min & max
+ */
+
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+/**
+ * Genera un array con la lunghezza impostata dall'utente
+ * @param  longArray lunghezza dell'array
+ * @returns Array
+ */
 function generaArray(longArray) {
     var array = [];
     while (array.length < longArray) {
