@@ -16,15 +16,31 @@
 
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100. I numeri non possono essere duplicati.
-
 // CREARE UNA VARIABILE CHE CONTERRA L'ARRAY CON I 16 NUMERI SCELTI RANDOM
-
-
 // CICLO while X PUSHARE I 16 NUMERI RANDOM NELL'ARRAY
 var primoArray = generaArray(16);
-var secondoArray = generaArray(18);
 console.log(primoArray);
-console.log(secondoArray);
+
+// In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100. L’utente non può inserire più volte lo stesso numero.
+var arrayPersona = [];
+var lose = false
+while (arrayPersona.length < 5 && !lose) {
+    var numero = parseInt(prompt('Inserisci numero'));
+    if (!primoArray.includes(numero)) {
+        console.log('Numero valido');
+        if (!arrayPersona.includes(numero)) {
+            arrayPersona.push(numero);
+        } else {
+            console.log('Attenzione Numero già inserito');
+        }
+    } else {
+        var lose = true;
+        console.log('lose');
+
+    }
+}
+console.log(arrayPersona.length);
+
 
 
 
@@ -38,7 +54,6 @@ console.log(secondoArray);
  * @param  max parametro massimo
  * @returns  numero casuale tra min & max
  */
-
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
@@ -57,5 +72,5 @@ function generaArray(longArray) {
         }
     }
     return array;
-}
+};
 
