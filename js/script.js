@@ -23,8 +23,14 @@ console.log(primoArray);
 
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100. L’utente non può inserire più volte lo stesso numero.
 var arrayPersona = [];
-var lose = false
-while (arrayPersona.length < 5 && !lose) {
+var lose = false;
+/**
+ * Condizione While che mi permette di controllare la lunghezza prestabilita dell'array che andrò a creare con i numeri inseriti 
+ * Se il numero inserito dall'utente è differente  dai numeri dell'array generato randomly, allora verrà inserito nell'arrayPersona
+ * Se il numero è gia inserito richiederà nuovamente un altro numero
+ * Visualizzaione fuori dal Ciclo While del Risultato
+ */
+while (arrayPersona.length < 2 && !lose) {
     var numero = parseInt(prompt('Inserisci numero'));
     if (!primoArray.includes(numero)) {
         console.log('Numero valido');
@@ -39,7 +45,8 @@ while (arrayPersona.length < 5 && !lose) {
 
     }
 }
-console.log(arrayPersona.length);
+risultato = arrayPersona.length;
+console.log(`Ecco il risultato ${risultato}`);
 
 
 
