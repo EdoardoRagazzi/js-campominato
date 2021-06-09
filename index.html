@@ -5,16 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- LINK css -->
     <link rel="stylesheet" href="css/style.css">
     <title>Campominato</title>
 </head>
 
 <body>
+    <!------TITOLO------>
+    <h1 class="text-uppercase">You wanna play it hard ?</h1>
+    <!-------INPUT BOX------->
+    <div class="input-box">
+        <!-- SELECTION OF RANGE -->
+        <label for="range" class="d-flex">Difficoltà</label>
+        <select id="range" name="age">
+            <option value="zero">100</option>
+            <option value="first">80</option>
+            <option value="second">60</option>
+        </select>
+        <input type="text" id="numero">
+
+        <button type="button" class="btn btn-success" id="zero">Submit</button>
 
 
-    <div id="numericasuali"></div>
 
-    <script src="js/script.js"></script>
+        <div id="numericasuali"></div>
+
+        <script src="js/script.js"></script>
 </body>
 
 </html>
