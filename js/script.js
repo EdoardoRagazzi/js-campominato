@@ -8,28 +8,42 @@
 // BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50
 
 // GENERO UN ARRAY
+var max = 100;
 var primoArray = generaArray(16);
 console.log(primoArray);
 // GENERO UN ARRAY VUOTO DA RIEMPIRE CON NUMERI INSERITI
 var arrayPersona = [];
 var lose = false;
-//var max = parseInt(document.getElementById('range').value);
-var max = parseInt(document.getElementById('zero').value);
 
-if (max = parseInt(document.getElementById('zero').value)) {
-    max = 100;
-} else if (max = parseInt(document.getElementById('first').value)) {
-    max = 80;
-} else if (max = parseInt(document.getElementById('second').value)) {
-    max = 60;
+var scelta = parseInt(prompt('Inserisci 0, 1 or 2'));
+while (scelta < 0 || scelta > 2 || isNaN(scelta)) {
+    alert('Becareful! have to be a number from 0 to 2');
+    var scelta = parseInt(prompt('Inserisci 0, 1 or 2'));
 }
+//var max = parseInt(document.getElementById('range').value);
+var max = 100;
+
+switch (scelta) {
+    case 0:
+        massimo = 100;
+        break;
+    case 1:
+        massimo = 80;
+        break;
+    case 2:
+        massimo = 50;
+        break;
+}
+
+var possibilita = max - 16;
+
 //-------FUNCTIONS------//
 //--Click
-var submit = document.getElementById('zero');
+var submit = document.getElementById('submit');
 submit.addEventListener("click", function () {
     //--SWITCH
 
-    if (arrayPersona.length < max - 16 && !lose) {
+    if (arrayPersona.length < massimo && !lose) {
         var numero = parseInt(document.getElementById('numero').value);
         //var numero = parseInt(prompt('Inserisci numero'));
         if (isNaN(numero) || numero < 1 || numero > max) { // sbagliato range 1 80.....1 50
@@ -45,12 +59,21 @@ submit.addEventListener("click", function () {
                 }
             } else {
                 var lose = true;
-                console.log('lose');
-            }
+                console.log('END GAME');
+                risultato = arrayPersona.length;
+                console.log(`Score: ${risultato}`);
+                dontShowStuff('numero');
+
+            };
         }
-    };
-    risultato = arrayPersona.length;
-    console.log(`Ecco il risultato ${risultato}`);
+    }
+
+
+});
+
+var submit = document.getElementById('restart');
+submit.addEventListener("click", function () {
+    location.reload();
 });
 
 /**
@@ -73,7 +96,7 @@ function random(min, max) {
 function generaArray(longArray) {
     var array = [];
     while (array.length < longArray) {
-        var numeroRandom = random(1, 100);
+        var numeroRandom = random(1, max);
         if (!array.includes(numeroRandom)) {
             array.push(numeroRandom);
         }
@@ -81,3 +104,6 @@ function generaArray(longArray) {
     return array;
 };
 
+function dontShowStuff(id) {
+    document.getElementById('numero').style.display = 'none';
+}

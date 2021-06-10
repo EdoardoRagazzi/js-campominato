@@ -14,26 +14,28 @@
 </head>
 
 <body>
+
     <!------TITOLO------>
     <h1 class="text-uppercase">You wanna play it hard ?</h1>
     <!-------INPUT BOX------->
     <div class="input-box">
         <!-- SELECTION OF RANGE -->
-        <label for="range" class="d-flex">Difficoltà</label>
-        <select id="range" name="age">
-            <option value="zero">100</option>
-            <option value="first">80</option>
-            <option value="second">60</option>
-        </select>
-        <input type="text" id="numero">
 
-        <button type="button" class="btn btn-success" id="zero">Submit</button>
+        <div class="input-group mb-3">
+            <button class="btn  text-align-center btn-success text-black" type="button" id="submit">Play</button>
+            <input type="text" class="form-control text-align-center" placeholder=""
+                aria-label="Example text with button addon" aria-describedby="button-addon1" id="numero">
+            <button type="button" class="btn btn-warning" id="restart">Try Again</button>
+        </div>
 
 
+    </div>
 
-        <div id="numericasuali"></div>
 
-        <script src="js/script.js"></script>
+
+    <div id="numericasuali" class=""> <i class="bi bi-brightness-low-fill"></i></div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
